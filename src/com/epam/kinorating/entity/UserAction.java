@@ -1,8 +1,9 @@
 package com.epam.kinorating.entity;
 
+import java.io.Serializable;
 import java.sql.Date;
 
-public class UserAction {
+public class UserAction implements Serializable{
     private int ID;
     private int userID;
     private int movieID;
@@ -90,45 +91,4 @@ public class UserAction {
         this.dateReview = dateReview;
     }
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-
-        UserAction that = (UserAction) o;
-
-        if (ID != that.ID) return false;
-        if (userID != that.userID) return false;
-        if (movieID != that.movieID) return false;
-        if (rating != that.rating) return false;
-        if (review != null ? !review.equals(that.review) : that.review != null) return false;
-        if (dateValuation != null ? !dateValuation.equals(that.dateValuation) : that.dateValuation != null)
-            return false;
-        return dateReview != null ? dateReview.equals(that.dateReview) : that.dateReview == null;
-    }
-
-    @Override
-    public int hashCode() {
-        int result = ID;
-        result = 31 * result + userID;
-        result = 31 * result + movieID;
-        result = 31 * result + rating;
-        result = 31 * result + (review != null ? review.hashCode() : 0);
-        result = 31 * result + (dateValuation != null ? dateValuation.hashCode() : 0);
-        result = 31 * result + (dateReview != null ? dateReview.hashCode() : 0);
-        return result;
-    }
-
-    @Override
-    public String toString() {
-        return "UserAction{" +
-                "ID=" + ID +
-                ", userID=" + userID +
-                ", movieID=" + movieID +
-                ", rating=" + rating +
-                ", review='" + review + '\'' +
-                ", dateValuation=" + dateValuation +
-                ", dateReview=" + dateReview +
-                '}';
-    }
 }

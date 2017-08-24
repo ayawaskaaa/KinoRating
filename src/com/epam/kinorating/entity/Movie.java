@@ -1,6 +1,8 @@
 package com.epam.kinorating.entity;
 
-public class Movie {
+import java.io.Serializable;
+
+public class Movie implements Serializable{
     private int id;
     private String name_ru;
     private String name_en;
@@ -190,74 +192,4 @@ public class Movie {
         this.tvSerial = tvSerial;
     }
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-
-        Movie movie = (Movie) o;
-
-        if (id != movie.id) return false;
-        if (year != movie.year) return false;
-        if (duration != movie.duration) return false;
-        if (tvSerial != movie.tvSerial) return false;
-        if (name_ru != null ? !name_ru.equals(movie.name_ru) : movie.name_ru != null) return false;
-        if (name_en != null ? !name_en.equals(movie.name_en) : movie.name_en != null) return false;
-        if (genre_ru != null ? !genre_ru.equals(movie.genre_ru) : movie.genre_ru != null) return false;
-        if (genre_en != null ? !genre_en.equals(movie.genre_en) : movie.genre_en != null) return false;
-        if (title_ru != null ? !title_ru.equals(movie.title_ru) : movie.title_ru != null) return false;
-        if (title_en != null ? !title_en.equals(movie.title_en) : movie.title_en != null) return false;
-        if (country_ru != null ? !country_ru.equals(movie.country_ru) : movie.country_ru != null) return false;
-        if (country_en != null ? !country_en.equals(movie.country_en) : movie.country_en != null) return false;
-        if (cast_ru != null ? !cast_ru.equals(movie.cast_ru) : movie.cast_ru != null) return false;
-        if (cast_en != null ? !cast_en.equals(movie.cast_en) : movie.cast_en != null) return false;
-        if (awards_ru != null ? !awards_ru.equals(movie.awards_ru) : movie.awards_ru != null) return false;
-        if (awards_en != null ? !awards_en.equals(movie.awards_en) : movie.awards_en != null) return false;
-        return image != null ? image.equals(movie.image) : movie.image == null;
-    }
-
-    @Override
-    public int hashCode() {
-        int result = id;
-        result = 31 * result + (name_ru != null ? name_ru.hashCode() : 0);
-        result = 31 * result + (name_en != null ? name_en.hashCode() : 0);
-        result = 31 * result + (genre_ru != null ? genre_ru.hashCode() : 0);
-        result = 31 * result + (genre_en != null ? genre_en.hashCode() : 0);
-        result = 31 * result + year;
-        result = 31 * result + (title_ru != null ? title_ru.hashCode() : 0);
-        result = 31 * result + (title_en != null ? title_en.hashCode() : 0);
-        result = 31 * result + (country_ru != null ? country_ru.hashCode() : 0);
-        result = 31 * result + (country_en != null ? country_en.hashCode() : 0);
-        result = 31 * result + duration;
-        result = 31 * result + (cast_ru != null ? cast_ru.hashCode() : 0);
-        result = 31 * result + (cast_en != null ? cast_en.hashCode() : 0);
-        result = 31 * result + (awards_ru != null ? awards_ru.hashCode() : 0);
-        result = 31 * result + (awards_en != null ? awards_en.hashCode() : 0);
-        result = 31 * result + (image != null ? image.hashCode() : 0);
-        result = 31 * result + (tvSerial ? 1 : 0);
-        return result;
-    }
-
-    @Override
-    public String toString() {
-        return "Movie{" +
-                "id=" + id +
-                ", name_ru='" + name_ru + '\'' +
-                ", name_en='" + name_en + '\'' +
-                ", genre_ru='" + genre_ru + '\'' +
-                ", genre_en='" + genre_en + '\'' +
-                ", year=" + year +
-                ", title_ru='" + title_ru + '\'' +
-                ", title_en='" + title_en + '\'' +
-                ", country_ru='" + country_ru + '\'' +
-                ", country_en='" + country_en + '\'' +
-                ", duration=" + duration +
-                ", cast_ru='" + cast_ru + '\'' +
-                ", cast_en='" + cast_en + '\'' +
-                ", awards_ru='" + awards_ru + '\'' +
-                ", awards_en='" + awards_en + '\'' +
-                ", image='" + image + '\'' +
-                ", tvSerial=" + tvSerial +
-                '}';
-    }
 }

@@ -1,8 +1,9 @@
 package com.epam.kinorating.entity;
 
+import java.io.Serializable;
 import java.sql.Date;
 
-public class User {
+public class User implements Serializable{
     private int id;
     private String name;
     private double rating = 10.0;
@@ -102,53 +103,4 @@ public class User {
         this.roleId = roleId;
     }
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-
-        User user = (User) o;
-
-        if (id != user.id) return false;
-        if (Double.compare(user.rating, rating) != 0) return false;
-        if (banned != user.banned) return false;
-        if (roleId != user.roleId) return false;
-        if (name != null ? !name.equals(user.name) : user.name != null) return false;
-        if (mail != null ? !mail.equals(user.mail) : user.mail != null) return false;
-        if (password != null ? !password.equals(user.password) : user.password != null) return false;
-        if (dateCreate != null ? !dateCreate.equals(user.dateCreate) : user.dateCreate != null) return false;
-        return salt != null ? salt.equals(user.salt) : user.salt == null;
-    }
-
-    @Override
-    public int hashCode() {
-        int result;
-        long temp;
-        result = id;
-        result = 31 * result + (name != null ? name.hashCode() : 0);
-        temp = Double.doubleToLongBits(rating);
-        result = 31 * result + (int) (temp ^ (temp >>> 32));
-        result = 31 * result + (mail != null ? mail.hashCode() : 0);
-        result = 31 * result + (password != null ? password.hashCode() : 0);
-        result = 31 * result + (dateCreate != null ? dateCreate.hashCode() : 0);
-        result = 31 * result + (salt != null ? salt.hashCode() : 0);
-        result = 31 * result + (banned ? 1 : 0);
-        result = 31 * result + roleId;
-        return result;
-    }
-
-    @Override
-    public String toString() {
-        return "User{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
-                ", rating=" + rating +
-                ", mail='" + mail + '\'' +
-                ", password='" + password + '\'' +
-                ", dateCreate=" + dateCreate +
-                ", salt='" + salt + '\'' +
-                ", banned=" + banned +
-                ", roleId=" + roleId +
-                '}';
-    }
 }

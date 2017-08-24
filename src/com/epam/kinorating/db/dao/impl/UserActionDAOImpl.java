@@ -36,6 +36,7 @@ public class UserActionDAOImpl extends AbstractDAOImpl implements UserActionDAO 
             throw new DAOException(Messages.USER_ACTION_ADD_ERROR, e);
         } finally {
             close(stmt);
+            close(con);
         }
         return true;
     }
@@ -68,6 +69,7 @@ public class UserActionDAOImpl extends AbstractDAOImpl implements UserActionDAO 
         } finally {
             close(stmt);
             close(rs);
+            close(con);
         }
         return userActionList;
     }
@@ -95,6 +97,7 @@ public class UserActionDAOImpl extends AbstractDAOImpl implements UserActionDAO 
         } finally {
             close(stmt);
             close(rs);
+            close(con);
         }
         return checkRating;
     }

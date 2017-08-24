@@ -47,6 +47,7 @@ public class UserDAOImpl extends AbstractDAOImpl implements UserDAO {
         } finally {
             close(stmt);
             close(rs);
+            close(con);
         }
         return id;
     }
@@ -83,6 +84,7 @@ public class UserDAOImpl extends AbstractDAOImpl implements UserDAO {
         } finally {
             close(stmt);
             close(rs);
+            close(con);
         }
         return user;
     }
@@ -108,6 +110,7 @@ public class UserDAOImpl extends AbstractDAOImpl implements UserDAO {
         } finally {
             close(stmt);
             close(rs);
+            close(con);
         }
         return salt;
     }
@@ -133,6 +136,7 @@ public class UserDAOImpl extends AbstractDAOImpl implements UserDAO {
         } finally {
             close(stmt);
             close(rs);
+            close(con);
         }
         return checkName;
     }
@@ -158,6 +162,7 @@ public class UserDAOImpl extends AbstractDAOImpl implements UserDAO {
         } finally {
             close(stmt);
             close(rs);
+            close(con);
         }
         return checkMail;
     }
@@ -178,6 +183,7 @@ public class UserDAOImpl extends AbstractDAOImpl implements UserDAO {
             throw new DAOException(Messages.USER_UPDATE_ERROR, e);
         } finally {
             close(stmt);
+            close(con);
         }
         return true;
     }
@@ -209,6 +215,7 @@ public class UserDAOImpl extends AbstractDAOImpl implements UserDAO {
         } finally {
             close(rs);
             close(stmt);
+            close(con);
         }
         return userList;
     }

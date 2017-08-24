@@ -50,10 +50,10 @@
         <location>/WEB-INF/jsp/error.jsp</location>
     </error-page>
 
-    <error-page>
-        <error-code>500</error-code>
-        <location>/WEB-INF/jsp/error.jsp</location>
-    </error-page>
+    <!--<error-page>-->
+        <!--<error-code>500</error-code>-->
+        <!--<location>/WEB-INF/jsp/error.jsp</location>-->
+    <!--</error-page>-->
 
     <resource-ref>
         <description>DB Connection</description>

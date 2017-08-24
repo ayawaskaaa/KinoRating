@@ -52,6 +52,7 @@ public class MovieDAOImpl extends AbstractDAOImpl implements MovieDAO {
             throw new DAOException(Messages.MOVIE_ADD_ERROR, e);
         } finally {
             close(stmt);
+            close(con);
         }
         return true;
     }
@@ -94,6 +95,7 @@ public class MovieDAOImpl extends AbstractDAOImpl implements MovieDAO {
         } finally {
             close(rs);
             close(stmt);
+            close(con);
         }
         return movie;
     }
@@ -133,6 +135,7 @@ public class MovieDAOImpl extends AbstractDAOImpl implements MovieDAO {
         } finally {
             close(rs);
             close(stmt);
+            close(con);
         }
         return movieList;
     }
@@ -173,6 +176,7 @@ public class MovieDAOImpl extends AbstractDAOImpl implements MovieDAO {
         } finally {
             close(stmt);
             close(rs);
+            close(con);
         }
         return movieList;
     }
